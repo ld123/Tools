@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        xmlns:commons="clr-namespace:WpfApp3.Commons"
+        xmlns:converters="clr-namespace:WpfApp3.Converters"
+        xmlns:uiExtensions="clr-namespace:WpfApp3.UIExtensions"
+        xmlns:uiCommons="clr-namespace:WpfApp3.UICommons"
+        mc:Ignorable="d" CacheMode="{x:Null}"
+        DataContext="{uiExtensions:GetInstance commons:IMainWindowViewModel}"
+        d:DataContext="{d:DesignInstance commons:IMainWindowViewModel}"
+        Title="MainWindow" Width="450" SizeToContent="Height">
+    <FrameworkElement.Resources>
+        <uiCommons:BindingProxy x:Key="MainProxy" Data="{Binding}" />
+        <ItemsPanelTemplate x:Key="TabItemPanel">
+            <WrapPanel IsItemsHost="True" />
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="TabItemTemplate">
+            <Button
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Padding="5,3"
+                Margin="3,0"
+                Command="{Binding Data.PageChangeCommand, Source={StaticResource MainProxy}}"
+                CommandParameter="{Binding}"
+                Content="{Binding Converter={x:Static converters:EnumToDescriptionConverter.Instance}}" />
+        </DataTemplate>
+    </FrameworkElement.Resources>
+    <StackPanel Margin="0,5">
+        <ItemsControl
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            ItemsPanel="{StaticResource TabItemPanel}"
+            ItemTemplate="{StaticResource TabItemTemplate}"
+            ItemsSource="{uiExtensions:GetArrayFromEnum commons:MainPage}" />
+        <Grid Width="420" Height="735" Margin="5">
+            <ContentControl
+                Content="{Binding CurrentPage, Converter={x:Static converters:PageEnumToControlConverter.Instance}}" />
+        </Grid>
+    </StackPanel>
+</Window>

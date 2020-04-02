@@ -15,6 +15,14 @@ namespace WpfApp3.ViewModels
             set { RaisePropertyIfChanged(ref _currentPage, value); }
         }
 
+        private bool _showMask;
+
+        public bool ShowMask
+        {
+            get { return _showMask; }
+            set { RaisePropertyIfChanged(ref _showMask, value); }
+        }
+
         public ActionCommand PageChangeCommand { get; }
 
         public MainWindowViewModel()

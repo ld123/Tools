@@ -68,7 +68,7 @@
     <Compile Include="Utilitys\Utility.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Converters\PageEnumToControlConverter.cs" />
-    <Compile Include="UIExtensions\RevealBorderBrushExtension.cs" />
+    <Compile Include="UIExtensions\RevealBrushExtension.cs" />
     <Compile Include="Controls\TestControl.xaml.cs">
       <DependentUpon>TestControl.xaml</DependentUpon>
     </Compile>

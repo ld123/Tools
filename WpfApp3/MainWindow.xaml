@@ -13,6 +13,7 @@
         d:DataContext="{d:DesignInstance commons:IMainWindowViewModel}"
         Title="MainWindow" Width="450" SizeToContent="Height">
     <FrameworkElement.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <uiCommons:BindingProxy x:Key="MainProxy" Data="{Binding}" />
         <ItemsPanelTemplate x:Key="TabItemPanel">
             <WrapPanel IsItemsHost="True" />
@@ -28,16 +29,42 @@
                 Content="{Binding Converter={x:Static converters:EnumToDescriptionConverter.Instance}}" />
         </DataTemplate>
     </FrameworkElement.Resources>
-    <StackPanel Margin="0,5">
-        <ItemsControl
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            ItemsPanel="{StaticResource TabItemPanel}"
-            ItemTemplate="{StaticResource TabItemTemplate}"
-            ItemsSource="{uiExtensions:GetArrayFromEnum commons:MainPage}" />
-        <Grid Width="420" Height="735" Margin="5">
-            <ContentControl
-                Content="{Binding CurrentPage, Converter={x:Static converters:PageEnumToControlConverter.Instance}}" />
-        </Grid>
-    </StackPanel>
+    <Grid Margin="0,5">
+        <StackPanel>
+            <Grid>
+                <ItemsControl
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    ItemsPanel="{StaticResource TabItemPanel}"
+                    ItemTemplate="{StaticResource TabItemTemplate}"
+                    ItemsSource="{uiExtensions:GetArrayFromEnum commons:MainPage}" />
+                <CheckBox
+                    VerticalContentAlignment="Center"
+                    IsChecked="{Binding ShowMask, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Content="遮罩"
+                    Padding="6,1"
+                    Margin="10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center" />
+            </Grid>
+            <Grid Width="420" Height="735" Margin="5">
+                <ContentControl
+                    x:Name="ContentPanel"
+                    Content="{Binding CurrentPage, Converter={x:Static converters:PageEnumToControlConverter.Instance}}" />
+                <Border
+                    Visibility="{Binding ShowMask, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Canvas>
+                        <FrameworkElement.Effect>
+                            <BlurEffect Radius="10" RenderingBias="Quality" />
+                        </FrameworkElement.Effect>
+                        <Panel.Background>
+                            <VisualBrush
+                                Stretch="None" AlignmentX="Center" AlignmentY="Top"
+                                Visual="{Binding ElementName=ContentPanel}" />
+                        </Panel.Background>
+                    </Canvas>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
 </Window>

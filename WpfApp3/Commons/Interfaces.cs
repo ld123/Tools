@@ -27,5 +27,7 @@ namespace WpfApp3.Commons
         MainPage CurrentPage { get; set; }
 
         ActionCommand PageChangeCommand { get; }
+
+        bool ShowMask { get; set; }
     }
 }

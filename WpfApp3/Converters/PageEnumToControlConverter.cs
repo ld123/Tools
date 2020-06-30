@@ -10,11 +10,17 @@ namespace WpfApp3.Converters
 {
     public class PageEnumToControlConverter : IValueConverter
     {
-        private static PageEnumToControlConverter _instance;
+        private static readonly Lazy<PageEnumToControlConverter> InstanceLazy =
+            new Lazy<PageEnumToControlConverter>(() => new PageEnumToControlConverter());
 
-        public static PageEnumToControlConverter Instance
+        public static PageEnumToControlConverter Instance => InstanceLazy.Value;
+
+        static PageEnumToControlConverter()
         {
-            get { return _instance ?? (_instance = new PageEnumToControlConverter()); }
+        }
+
+        private PageEnumToControlConverter()
+        {
         }
 
         private static readonly Dictionary<MainPage, Type> Map = new Dictionary<MainPage, Type>

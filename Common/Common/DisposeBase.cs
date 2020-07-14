@@ -1,70 +1,51 @@
-﻿using NLog;
-using System;
-using Common.Extensions;
+﻿using System;
 
 namespace Common.Common
 {
     public class DisposeBase : IDisposable
     {
-        protected readonly Logger Logger;
         private bool _disposed;
-
-        public DisposeBase()
-        {
-            Logger = this.GetLogger();
-        }
 
         ~DisposeBase()
         {
-            Logger.Trace("开始自动销毁资源!");
+            Logger.Debug("开始自动销毁资源!");
             Dispose(false);
-            Logger.Trace("自动销毁资源!");
+            Logger.Debug("自动销毁资源!");
         }
 
         private void Dispose(bool isDisposing)
         {
-            Logger.Trace("开始销毁资源!");
+            Logger.Indent();
+            var flag = "";//GetType().FullName;
+            Logger.Debug($"开始销毁资源!({flag})");
             if (_disposed)
             {
-                Logger.Trace("已经销毁过资源!");
+                Logger.Debug("已经销毁过资源!");
                 return;
             }
 
             if (isDisposing)
             {
-                try
-                {
-                    Logger.Trace("开始销毁托管资源!");
-                    DisposeManagedResources();
-                    Logger.Trace("销毁托管资源完毕!");
-                }
-                catch (Exception e)
-                {
-                    Logger.Fatal(e);
-                }
+                Logger.Debug("开始销毁托管资源!");
+                DisposeManagedResources();
+                Logger.Debug("销毁托管资源完毕!");
             }
 
-            try
-            {
-                Logger.Trace("开始销毁非托管资源!");
-                DisposeUnManagedResources();
-                Logger.Trace("销毁非托管资源完毕!");
-            }
-            catch (Exception e)
-            {
-                Logger.Fatal(e);
-            }
+            Logger.Debug("开始销毁非托管资源!");
+            DisposeUnManagedResources();
+            Logger.Debug("销毁非托管资源完毕!");
 
             _disposed = true;
-            Logger.Trace("销毁资源完毕!");
+            Logger.Debug($"销毁资源完毕!({flag})");
+            Logger.UnIndent();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
-            Logger.Trace("开始手动销毁资源!");
+            Logger.Debug("开始手动销毁资源!");
             Dispose(true);
             GC.SuppressFinalize(this);
-            Logger.Trace("手动销毁资源完毕!");
+            Logger.Debug("手动销毁资源完毕!");
         }
 
         protected virtual void DisposeUnManagedResources()

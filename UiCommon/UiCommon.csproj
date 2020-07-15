@@ -48,11 +48,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BindingPipeCollection.cs" />
+    <Compile Include="Utilities\UiUtility.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Common\BindingProxy.cs" />
+    <Compile Include="Common\MvvmEventSetter.cs" />
+    <Compile Include="Common\ReadOnlyBinding.cs" />
     <Compile Include="Converters\EnumToDescriptionConverter.cs" />
     <Compile Include="CustomControl1.cs">
       <SubType>Code</SubType>
@@ -61,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Extensions\GetArrayFromEnumExtension.cs" />
     <Compile Include="Extensions\RevealBrushExtension.cs" />
+    <Compile Include="Models\BindingPipe.cs" />
+    <Compile Include="Models\EventSetterInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

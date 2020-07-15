@@ -23,16 +23,9 @@ namespace UiCommon.Common
             get { return base.Event; }
             set
             {
-                if (value == null)
-                    throw new ArgumentNullException(nameof(value));
-                CheckSealed();
                 base.Event = value;
                 SetEventHandler();
             }
-        }
-
-        public MvvmEventSetter()
-        {
         }
 
         private void SetEventHandler()

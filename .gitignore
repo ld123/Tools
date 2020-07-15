@@ -2,6 +2,7 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-/WpfApp3/.vs/
-/WpfApp3/obj/
-/WpfApp3/bin/
+/**/.vs/
+/**/obj/
+/**/bin/
+

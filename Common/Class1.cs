@@ -2,7 +2,7 @@
 
 namespace Common
 {
-    public class Class1
+    internal class Class1
     {
     }
 }

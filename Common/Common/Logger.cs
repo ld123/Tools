@@ -18,6 +18,7 @@ namespace Common.Common
 
         internal static bool Log(T obj, LogLevel level)
         {
+            if (level < Logger.LogLevel) return true;
             return LogHandle?.Invoke(obj, level) ?? false;
         }
     }
@@ -29,6 +30,20 @@ namespace Common.Common
         public static int IndentLevel
         {
             get { return Trace.IndentLevel; }
+        }
+
+        public static LogLevel LogLevel { get; set; }
+
+        static Logger()
+        {
+            if (Utility.IsDebug || Utility.IsAttach)
+            {
+                LogLevel = LogLevel.Debug;
+            }
+            else
+            {
+                LogLevel = LogLevel.Info;
+            }
         }
 
         public static void Fatal<T>(T obj, [CallerMemberName] string name = null, [CallerFilePath] string path = null,

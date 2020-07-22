@@ -5,12 +5,6 @@ namespace Common.Enums
     public enum LogLevel
     {
         /// <summary>
-        /// 强制
-        /// </summary>
-        [Description("强制")]
-        Force,
-
-        /// <summary>
         /// 调试
         /// </summary>
         [Description("调试")]
@@ -39,5 +33,17 @@ namespace Common.Enums
         /// </summary>
         [Description("致命")]
         Fatal,
+
+        /// <summary>
+        /// 关闭
+        /// </summary>
+        [Description("关闭")]
+        Off,
+
+        /// <summary>
+        /// 强制
+        /// </summary>
+        [Description("强制")]
+        Force,
     }
 }

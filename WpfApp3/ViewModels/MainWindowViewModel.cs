@@ -1,6 +1,7 @@
-﻿using System;
-using Common.Commands;
+﻿using Common.Commands;
 using Common.ViewModels;
+using System;
+using System.Windows.Input;
 using WpfApp3.Commons;
 using WpfApp3.Utilitys;
 
@@ -24,7 +25,7 @@ namespace WpfApp3.ViewModels
             set { RaisePropertyIfChanged(ref _showMask, value); }
         }
 
-        public ActionCommand PageChangeCommand { get; }
+        public ICommand PageChangeCommand { get; }
 
         public MainWindowViewModel()
         {

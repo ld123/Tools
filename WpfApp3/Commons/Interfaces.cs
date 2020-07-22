@@ -1,4 +1,4 @@
-﻿using Common.Commands;
+﻿using System.Windows.Input;
 
 namespace WpfApp3.Commons
 {
@@ -26,7 +26,7 @@ namespace WpfApp3.Commons
     {
         MainPage CurrentPage { get; set; }
 
-        ActionCommand PageChangeCommand { get; }
+        ICommand PageChangeCommand { get; }
 
         bool ShowMask { get; set; }
     }

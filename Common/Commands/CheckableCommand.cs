@@ -17,11 +17,11 @@ namespace Common.Commands
             set
             {
                 if (_isChecked == value) return;
-                using (new Performance($"{nameof(CheckableCommand)}({Name}) IsChecked Change"))
+                using (new Performance($"{Prefix} IsChecked Change"))
                 {
                     if (!OnIsCheckChanging(value))
                     {
-                        Logger.Info($"{nameof(CheckableCommand)}({Name}) IsChecked Canceled");
+                        Logger.Info($"{Prefix} IsChecked Canceled");
                         return;
                     }
 

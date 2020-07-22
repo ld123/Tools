@@ -4,12 +4,18 @@ namespace Common.ViewModels
 {
     public class ViewModelBase : NotifyObject
     {
-        private string _name;
+        public string Name { get; }
 
-        public string Name
+        protected readonly string Prefix;
+
+        public ViewModelBase() : this(default)
         {
-            get { return _name; }
-            set { RaisePropertyIfChanged(ref _name, value); }
+        }
+
+        public ViewModelBase(string name)
+        {
+            Name = name;
+            Prefix = $"{GetType().Name}({Name})";
         }
     }
 }

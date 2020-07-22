@@ -41,17 +41,38 @@ namespace Common.Commands
             set { RaisePropertyIfChanged(ref _tag, value); }
         }
 
-        private readonly string _prefix;
+        private string _text;
+
+        public string Text
+        {
+            get { return _text; }
+            set { RaisePropertyIfChanged(ref _text, value); }
+        }
+
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { RaisePropertyIfChanged(ref _description, value); }
+        }
+
+        private string _tip;
+
+        public string Tip
+        {
+            get { return _tip; }
+            set { RaisePropertyIfChanged(ref _tip, value); }
+        }
 
         protected CommandBase(string name) : this(name, default)
         {
         }
 
-        protected CommandBase(string name, object tag)
+        protected CommandBase(string name, object tag) : base(name)
         {
-            Name = name;
+            Text = name;
             Tag = tag;
-            _prefix = $"{GetType().Name}({Name})";
         }
 
         public bool CanExecute(object parameter)
@@ -62,12 +83,12 @@ namespace Common.Commands
 
         public void Execute(object parameter)
         {
-            using (new Performance($"{_prefix} Execute"))
+            using (new Performance($"{Prefix} Execute"))
             {
                 ExecuteBefore(parameter);
                 if (!CanExecute(parameter))
                 {
-                    Logger.Info($"{_prefix} Can't Executed.");
+                    Logger.Info($"{Prefix} Can't Executed.");
                     return;
                 }
 

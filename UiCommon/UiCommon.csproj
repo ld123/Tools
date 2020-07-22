@@ -48,6 +48,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\IsTypeConverter.cs" />
+    <Compile Include="Converters\SizeToRectConverter.cs" />
     <Compile Include="Models\BindingPipeCollection.cs" />
     <Compile Include="Utilities\UiUtility.cs" />
     <Page Include="Themes\Generic.xaml">

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -28,7 +27,7 @@ namespace Controls.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException($"{typeof(InfiniteMoveBackgroundConverter)}不支持TwoWay和OneWayToSource的绑定!");
         }
     }
 }

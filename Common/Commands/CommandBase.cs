@@ -41,6 +41,8 @@ namespace Common.Commands
             set { RaisePropertyIfChanged(ref _tag, value); }
         }
 
+        private readonly string _prefix;
+
         protected CommandBase(string name) : this(name, default)
         {
         }
@@ -49,6 +51,7 @@ namespace Common.Commands
         {
             Name = name;
             Tag = tag;
+            _prefix = $"{GetType().Name}({Name})";
         }
 
         public bool CanExecute(object parameter)
@@ -59,13 +62,12 @@ namespace Common.Commands
 
         public void Execute(object parameter)
         {
-            var prefix = $"{GetType().Name}({Name})";
-            using (new Performance($"{prefix} Execute"))
+            using (new Performance($"{_prefix} Execute"))
             {
                 ExecuteBefore(parameter);
                 if (!CanExecute(parameter))
                 {
-                    Logger.Info($"{prefix} Can't Executed.");
+                    Logger.Info($"{_prefix} Can't Executed.");
                     return;
                 }
 

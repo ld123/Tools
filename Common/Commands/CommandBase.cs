@@ -13,7 +13,7 @@ namespace Common.Commands
         protected abstract bool CanExecuteCore(object parameter);
         protected abstract void ExecuteCore(object parameter);
 
-        private bool _isEnabled;
+        private bool _isEnabled = true;
 
         public bool IsEnabled
         {
@@ -62,7 +62,7 @@ namespace Common.Commands
             using (new Performance($"Command({Name}) Execute"))
             {
                 ExecuteBefore(parameter);
-                if (CanExecute(parameter))
+                if (!CanExecute(parameter))
                 {
                     Logger.Info($"Command({Name}) Can't Executed.");
                     return;

@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace Controls.Converters
 {
-    public class InfiniteMoveBackgroundConverter : IValueConverter
+    internal class InfiniteMoveBackgroundConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

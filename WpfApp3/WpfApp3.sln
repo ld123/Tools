@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\Common\Common.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiCommon", "..\UiCommon\UiCommon.csproj", "{249C87B8-490E-4603-AEE5-C4FE0905424E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "..\Controls\Controls.csproj", "{D08EF3D0-2039-46A4-BDDF-D596638F0622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{249C87B8-490E-4603-AEE5-C4FE0905424E}.Release|x64.Build.0 = Release|Any CPU
 		{249C87B8-490E-4603-AEE5-C4FE0905424E}.Release|x86.ActiveCfg = Release|Any CPU
 		{249C87B8-490E-4603-AEE5-C4FE0905424E}.Release|x86.Build.0 = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|x64.Build.0 = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Debug|x86.Build.0 = Debug|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|x64.ActiveCfg = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|x64.Build.0 = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|x86.ActiveCfg = Release|Any CPU
+		{D08EF3D0-2039-46A4-BDDF-D596638F0622}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

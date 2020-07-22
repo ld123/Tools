@@ -46,6 +46,8 @@ namespace WpfApp3
 
             container.Register<IMainWindow, MainWindow>().AsSingleton();
             container.Register<IMainWindowViewModel, MainWindowViewModel>().AsSingleton();
+
+            container.AutoRegister();
         }
     }
 }

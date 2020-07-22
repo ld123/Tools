@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WpfApp3.Controls.InfiniteMove1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfApp3.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <InfiniteMoveControl Grid.Row="0">
+            <InfiniteMoveControl.Background>
+                <VisualBrush
+                    Visual="{Binding ElementName=ContentBorder}" />
+            </InfiniteMoveControl.Background>
+        </InfiniteMoveControl>
+        <Border x:Name="ContentBorder" Grid.Row="2">
+            <InfiniteMoveControl>
+                <InfiniteMoveControl.Background>
+                    <ImageBrush
+                        TileMode="FlipXY"
+                        Viewbox="0.1,0.1,1.1,1.1"
+                        Viewport="0,0,0.3,0.3"
+                        ImageSource="../Resources/image.png" />
+                </InfiniteMoveControl.Background>
+            </InfiniteMoveControl>
+        </Border>
+    </Grid>
+</UserControl>

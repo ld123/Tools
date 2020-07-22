@@ -27,6 +27,8 @@ namespace WpfApp3.Converters
         {
             [MainPage.Test] = typeof(ITest),
             [MainPage.Calc] = typeof(ICalc),
+            [MainPage.InfiniteMove1] = typeof(IInfiniteMove1),
+            [MainPage.InfiniteMove2] = typeof(IInfiniteMove2),
         };
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

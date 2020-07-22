@@ -57,6 +57,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commons\Enums.cs" />
+    <Compile Include="Controls\InfiniteMove1.xaml.cs">
+      <DependentUpon>InfiniteMove1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIExtensions\GetInstanceExtension.cs" />
     <Compile Include="Commons\Interfaces.cs" />
     <Compile Include="Utilitys\Utility.cs" />
@@ -72,6 +75,10 @@
     <Compile Include="Controls\Win10CalcControl.xaml.cs">
       <DependentUpon>Win10CalcControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\InfiniteMove1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -136,6 +143,10 @@
       <Project>{249c87b8-490e-4603-aee5-c4fe0905424e}</Project>
       <Name>UiCommon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

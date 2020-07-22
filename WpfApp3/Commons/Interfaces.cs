@@ -22,6 +22,14 @@ namespace WpfApp3.Commons
     {
     }
 
+    public interface IInfiniteMove1 : ITestBase
+    {
+    }
+
+    public interface IInfiniteMove2 : ITestBase
+    {
+    }
+
     public interface IMainWindowViewModel : ITestBase
     {
         MainPage CurrentPage { get; set; }

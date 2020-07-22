@@ -56,19 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converters\EnumToDescriptionConverter.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="UICommons\BindingProxy.cs" />
-    <Compile Include="UIExtensions\GetArrayFromEnumExtension.cs" />
-    <Compile Include="UICommons\ActionCommand.cs" />
-    <Compile Include="UICommons\CommandBase.cs" />
     <Compile Include="Commons\Enums.cs" />
     <Compile Include="UIExtensions\GetInstanceExtension.cs" />
     <Compile Include="Commons\Interfaces.cs" />
     <Compile Include="Utilitys\Utility.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Converters\PageEnumToControlConverter.cs" />
-    <Compile Include="UIExtensions\RevealBrushExtension.cs" />
     <Compile Include="Controls\TestControl.xaml.cs">
       <DependentUpon>TestControl.xaml</DependentUpon>
     </Compile>
@@ -76,7 +69,6 @@
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilitys\TinyIoC.cs" />
-    <Compile Include="UICommons\ViewModelBase.cs" />
     <Compile Include="Controls\Win10CalcControl.xaml.cs">
       <DependentUpon>Win10CalcControl.xaml</DependentUpon>
     </Compile>
@@ -131,6 +123,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{e3662014-9f25-47f4-bb39-6a38596149f8}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Controls.csproj">
+      <Project>{d08ef3d0-2039-46a4-bddf-d596638f0622}</Project>
+      <Name>Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UiCommon\UiCommon.csproj">
+      <Project>{249c87b8-490e-4603-aee5-c4fe0905424e}</Project>
+      <Name>UiCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
+using Common.Commands;
+using Common.ViewModels;
 using WpfApp3.Commons;
-using WpfApp3.UICommons;
 using WpfApp3.Utilitys;
 
 namespace WpfApp3.ViewModels
@@ -30,7 +31,7 @@ namespace WpfApp3.ViewModels
             PageChangeCommand = new ActionCommand("更改主页", OnPageChangeCommandExecuted);
         }
 
-        private void OnPageChangeCommandExecuted(object param)
+        private void OnPageChangeCommandExecuted(ActionCommand command, object param)
         {
             if (!(param is MainPage page)) return;
             if (page == _currentPage) return;

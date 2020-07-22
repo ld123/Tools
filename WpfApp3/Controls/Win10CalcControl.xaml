@@ -10,8 +10,8 @@
              Background="#F5F5F5"
              d:DesignHeight="735" d:DesignWidth="420">
     <FrameworkElement.Resources>
-        <uiExtensions:RevealBrush x:Key="RevealBrush" Color="#BBBBBB" ToColor="#FDFDFD" />
-        <uiExtensions:RevealBrush x:Key="RevealBrush2" Color="#BBBBBB" ToColor="#00FDFDFD" />
+        <RevealBrush x:Key="RevealBrush" Color="#BBBBBB" ToColor="#FDFDFD" />
+        <RevealBrush x:Key="RevealBrush2" Color="#BBBBBB" ToColor="#00FDFDFD" />
         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="Background" Value="#FDFDFD" />
             <Setter Property="Template">
@@ -55,21 +55,21 @@
                 Content="一"
                 BorderBrush="Transparent"
                 BorderThickness="2"
-                Background="{uiExtensions:RevealBrush Gainsboro, Radius=50}"
+                Background="{RevealBrush Gainsboro, Radius=50}"
                 Grid.Column="1" />
             <Button
                 Width="30"
                 Content="口"
                 BorderBrush="Transparent"
                 BorderThickness="2"
-                Background="{uiExtensions:RevealBrush Gainsboro, Radius=50}"
+                Background="{RevealBrush Gainsboro, Radius=50}"
                 Grid.Column="2" />
             <Button
                 Width="30"
                 Content="❎"
                 BorderBrush="Transparent"
                 BorderThickness="2"
-                Background="{uiExtensions:RevealBrush Gainsboro, Radius=50}"
+                Background="{RevealBrush Gainsboro, Radius=50}"
                 Grid.Column="3" />
         </Grid>
         <Grid Grid.Row="1" Margin="10,0">
@@ -82,7 +82,7 @@
             <Button
                 VerticalAlignment="Center"
                 BorderThickness="0"
-                Background="{uiExtensions:RevealBrush Gainsboro, Radius=100}"
+                Background="{RevealBrush Gainsboro, Radius=100}"
                 Content="三"
                 FontSize="14"
                 Height="40"
@@ -101,7 +101,7 @@
                     VerticalAlignment="Center"
                     Content="🆒"
                     BorderThickness="2"
-                    BorderBrush="{uiExtensions:RevealBrush DarkGray, Radius=100}"
+                    BorderBrush="{RevealBrush DarkGray, Radius=100}"
                     Height="40"
                     Width="40" />
             </WrapPanel>
@@ -109,7 +109,7 @@
                 Grid.Column="3"
                 VerticalAlignment="Center"
                 BorderThickness="2"
-                BorderBrush="{uiExtensions:RevealBrush DarkGray, Radius=100}"
+                BorderBrush="{RevealBrush DarkGray, Radius=100}"
                 Content="①"
                 FontSize="16"
                 Height="40"

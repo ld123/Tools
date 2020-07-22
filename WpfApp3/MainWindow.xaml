@@ -7,14 +7,13 @@
         xmlns:commons="clr-namespace:WpfApp3.Commons"
         xmlns:converters="clr-namespace:WpfApp3.Converters"
         xmlns:uiExtensions="clr-namespace:WpfApp3.UIExtensions"
-        xmlns:uiCommons="clr-namespace:WpfApp3.UICommons"
         mc:Ignorable="d" CacheMode="{x:Null}"
         DataContext="{uiExtensions:GetInstance commons:IMainWindowViewModel}"
         d:DataContext="{d:DesignInstance commons:IMainWindowViewModel}"
         Title="MainWindow" Width="450" SizeToContent="Height">
     <FrameworkElement.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-        <uiCommons:BindingProxy x:Key="MainProxy" Data="{Binding}" />
+        <BindingProxy x:Key="MainProxy" Data="{Binding}" />
         <ItemsPanelTemplate x:Key="TabItemPanel">
             <WrapPanel IsItemsHost="True" />
         </ItemsPanelTemplate>
@@ -26,18 +25,18 @@
                 Margin="3,0"
                 Command="{Binding Data.PageChangeCommand, Source={StaticResource MainProxy}}"
                 CommandParameter="{Binding}"
-                Content="{Binding Converter={x:Static converters:EnumToDescriptionConverter.Instance}}" />
+                Content="{Binding Converter={x:Static EnumToDescriptionConverter.Instance}}" />
         </DataTemplate>
     </FrameworkElement.Resources>
     <Grid Margin="0,5">
-        <StackPanel>
+        <StackPanel x:Name="StackPanel" Background="Transparent">
             <Grid>
                 <ItemsControl
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     ItemsPanel="{StaticResource TabItemPanel}"
                     ItemTemplate="{StaticResource TabItemTemplate}"
-                    ItemsSource="{uiExtensions:GetArrayFromEnum commons:MainPage}" />
+                    ItemsSource="{GetArrayFromEnum commons:MainPage}" />
                 <CheckBox
                     VerticalContentAlignment="Center"
                     IsChecked="{Binding ShowMask, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -47,11 +46,12 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center" />
             </Grid>
-            <Grid Width="420" Height="735" Margin="5">
+            <Grid Height="735" Margin="5">
                 <ContentControl
                     x:Name="ContentPanel"
                     Content="{Binding CurrentPage, Converter={x:Static converters:PageEnumToControlConverter.Instance}}" />
                 <Border
+                    IsHitTestVisible="False"
                     Visibility="{Binding ShowMask, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Canvas>
                         <FrameworkElement.Effect>

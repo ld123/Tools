@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Threading;
 using TinyIoC;
+using UiCommon.Converters;
 using WpfApp3.Commons;
 using WpfApp3.Controls;
 using WpfApp3.Converters;

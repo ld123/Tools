@@ -1,4 +1,4 @@
-﻿using WpfApp3.UICommons;
+﻿using Common.Commands;
 
 namespace WpfApp3.Commons
 {

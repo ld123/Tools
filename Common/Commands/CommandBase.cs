@@ -59,12 +59,13 @@ namespace Common.Commands
 
         public void Execute(object parameter)
         {
-            using (new Performance($"Command({Name}) Execute"))
+            var prefix = $"{GetType().Name}({Name})";
+            using (new Performance($"{prefix} Execute"))
             {
                 ExecuteBefore(parameter);
                 if (!CanExecute(parameter))
                 {
-                    Logger.Info($"Command({Name}) Can't Executed.");
+                    Logger.Info($"{prefix} Can't Executed.");
                     return;
                 }
 

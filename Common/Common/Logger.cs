@@ -112,6 +112,19 @@ namespace Common.Common
             }
         }
 
+        public static void TraceLog<T>(T obj)
+        {
+            if (obj == null) return;
+
+            var handler = Logger<T>.Log(obj, LogLevel.Trace);
+            if (handler) return;
+
+            if (Utility.IsAttach || Utility.IsDebug)
+            {
+                Trace.WriteLine(obj.ToString());
+            }
+        }
+
         public static void Indent()
         {
             Trace.Indent();

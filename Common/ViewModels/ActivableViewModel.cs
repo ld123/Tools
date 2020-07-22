@@ -19,11 +19,11 @@ namespace Common.ViewModels
             set
             {
                 if (_isActive == value) return;
-                using (new Performance("IsActive Change"))
+                using (new Performance($"{nameof(ActivableViewModel)}(${Name}) IsActive Change"))
                 {
                     if (!OnIsActiveChanging(value))
                     {
-                        Logger.Info("IsActive Canceled");
+                        Logger.Info($"{nameof(ActivableViewModel)}(${Name}) IsActive Canceled");
                         return;
                     }
 

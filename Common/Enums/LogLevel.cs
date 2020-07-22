@@ -5,6 +5,12 @@ namespace Common.Enums
     public enum LogLevel
     {
         /// <summary>
+        /// 跟踪
+        /// </summary>
+        [Description("跟踪")]
+        Trace,
+
+        /// <summary>
         /// 调试
         /// </summary>
         [Description("调试")]

@@ -8,11 +8,11 @@ using System.Windows.Markup;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Controls")]
+[assembly: AssemblyTitle("UserControls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Controls")]
+[assembly: AssemblyProduct("UserControls")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,13 +32,13 @@ using System.Windows.Markup;
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
 
-[assembly:ThemeInfo(
+[assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //主题特定资源词典所处位置
-                             //(未在页面中找到资源时使用，
-                             //或应用程序资源字典中找到时使用)
+    //(未在页面中找到资源时使用，
+    //或应用程序资源字典中找到时使用)
     ResourceDictionaryLocation.SourceAssembly //常规资源词典所处位置
-                                      //(未在页面中找到资源时使用，
-                                      //、应用程序或任何主题专用资源字典中找到时使用)
+    //(未在页面中找到资源时使用，
+    //、应用程序或任何主题专用资源字典中找到时使用)
 )]
 
 
@@ -54,4 +54,4 @@ using System.Windows.Markup;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", nameof(Controls))]
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", nameof(UserControls))]

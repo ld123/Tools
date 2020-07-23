@@ -135,13 +135,13 @@
       <Project>{e3662014-9f25-47f4-bb39-6a38596149f8}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Controls\Controls.csproj">
-      <Project>{d08ef3d0-2039-46a4-bddf-d596638f0622}</Project>
-      <Name>Controls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UiCommon\UiCommon.csproj">
       <Project>{249c87b8-490e-4603-aee5-c4fe0905424e}</Project>
       <Name>UiCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserControls\UserControls.csproj">
+      <Project>{444154a7-a21e-4768-83e8-0f38157e5111}</Project>
+      <Name>UserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

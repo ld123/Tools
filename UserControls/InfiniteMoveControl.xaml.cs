@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Controls
+namespace UserControls
 {
     /// <summary>
     /// InfiniteMoveControl.xaml 的交互逻辑

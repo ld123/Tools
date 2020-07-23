@@ -15,19 +15,17 @@
         <InfiniteMoveControl Grid.Row="0">
             <InfiniteMoveControl.Background>
                 <VisualBrush
-                    Visual="{Binding ElementName=ContentBorder}" />
+                    Visual="{Binding ElementName=InfiniteMoveControl2}" />
             </InfiniteMoveControl.Background>
         </InfiniteMoveControl>
-        <Border x:Name="ContentBorder" Grid.Row="2">
-            <InfiniteMoveControl>
-                <InfiniteMoveControl.Background>
-                    <ImageBrush
-                        TileMode="FlipXY"
-                        Viewbox="0.1,0.1,1.1,1.1"
-                        Viewport="0,0,0.3,0.3"
-                        ImageSource="../Resources/image.png" />
-                </InfiniteMoveControl.Background>
-            </InfiniteMoveControl>
-        </Border>
+        <InfiniteMoveControl x:Name="InfiniteMoveControl2" Grid.Row="2">
+            <InfiniteMoveControl.Background>
+                <ImageBrush
+                    TileMode="FlipXY"
+                    Viewbox="0.1,0.1,1.1,1.1"
+                    Viewport="0,0,0.3,0.3"
+                    ImageSource="../Resources/image.png" />
+            </InfiniteMoveControl.Background>
+        </InfiniteMoveControl>
     </Grid>
 </UserControl>
